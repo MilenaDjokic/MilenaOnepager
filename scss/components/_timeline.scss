@@ -1,0 +1,153 @@
+#timeline {
+  overflow: hidden;
+  .timeline-top {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 10rem;
+    background-color: $color-1;
+    @media (max-width: 600px) {
+    }
+
+    .timeline-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 3rem;
+      font-family: $font-2;
+      letter-spacing: 0.5rem;
+      color: $color-3;
+      @media (max-width: 600px) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  ul {
+    padding: 15rem 0;
+    @media (max-width: 600px) {
+      padding: 5rem 0;
+    }
+    // Line
+    li {
+      list-style: none;
+      position: relative;
+      width: 6px;
+      margin: auto;
+      background-color: $color-2;
+      @media (max-width: 600px) {
+        margin-left: 20px;
+        padding-bottom: 2rem;
+      }
+
+      // Box right
+      &:nth-child(odd) .timeline-box {
+        left: 40px;
+        transform: translate(200px, 0);
+
+        // Arrow right
+        &::before {
+          left: -15px;
+          border-width: 15px 30px 15px 0;
+          border-color: transparent $color-1 transparent transparent;
+        }
+      }
+      // Box left
+      &:nth-child(even) .timeline-box {
+        left: -390px;
+        transform: translate(-200px, 0);
+        @media (max-width: 600px) {
+          left: 40px;
+        }
+
+        // Arrow left
+        &::before {
+          right: -15px;
+          border-width: 15px 0px 15px 30px;
+          border-color: transparent transparent transparent $color-1;
+          @media (max-width: 600px) {
+            left: -15px;
+            border-width: 15px 30px 15px 0px;
+            border-color: transparent $color-1 transparent transparent;
+          }
+        }
+      }
+
+      // Dots
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        width: 25px;
+        height: 25px;
+        background: inherit;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        transition: background 0.5s ease-in-out;
+        @media (max-width: 600px) {
+          bottom: 2.5rem;
+        }
+      }
+
+      .timeline-box {
+        position: relative;
+        bottom: 0;
+        width: 300px;
+        padding: 3rem;
+        background: $color-1;
+        border-radius: 30px;
+        transition: all 0.5s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        @media (max-width: 600px) {
+          width: 250px;
+          padding: 1.5rem;
+        }
+
+        h3 {
+          font-size: 2.2rem;
+          color: $color-3;
+          margin-bottom: 1.5rem;
+          letter-spacing: 0.2rem;
+          @media (max-width: 600px) {
+            font-size: 2rem;
+          }
+        }
+
+        p {
+          text-align: justify;
+          font-size: 2rem;
+          color: $color-3;
+          line-height: 1.2;
+          @media (max-width: 600px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        // Arrow base
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 5px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+        }
+      }
+    }
+
+    // Show boxes
+    li.show .timeline-box {
+      transform: none;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    li.show:after {
+      background: $color-1;
+    }
+  }
+}

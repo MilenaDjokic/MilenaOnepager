@@ -1,0 +1,150 @@
+#section-3 {
+  position: relative;
+  background: url(/img/background-1.svg) no-repeat center center/cover;
+  margin-top: 10rem;
+  width: 100%;
+  @media (max-width: 600px) {
+    margin-top: 5rem;
+  }
+
+  .container-section-3 {
+    margin: auto;
+    padding-top: 5rem;
+    width: 100rem;
+    max-width: 98%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    .container-icons {
+      .icon-text {
+        margin: 1.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+        color: $color-3;
+      }
+
+      .contact-icon {
+        height: 80px;
+      }
+
+      @media (max-width: 600px) {
+        .contact-icon {
+          height: 30px;
+        }
+        .icon-text {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .container-form {
+      max-width: 80%;
+      margin: auto;
+      p {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: $color-3;
+        font-family: $font-2;
+        max-width: 98%;
+      }
+
+      .text-fields {
+        display: grid;
+        grid-template-areas:
+          "name email"
+          "subject phone"
+          "message message"
+          "button button";
+        grid-gap: 1.2rem;
+        margin-bottom: 1.2rem;
+        max-width: 98%;
+
+        // Grid Areas
+        .name-input {
+          grid-area: name;
+        }
+        .subject-input {
+          grid-area: subject;
+        }
+        .email-input {
+          grid-area: email;
+        }
+        .phone-input {
+          grid-area: phone;
+        }
+        .message-input {
+          grid-area: message;
+
+          height: 100px;
+        }
+        button {
+          grid-area: button;
+        }
+
+        input,
+        textarea {
+          background: none;
+          border: $color-3 solid 2.5px;
+          border-radius: 5px;
+          height: 3rem;
+          padding: 0.2rem 1.5rem;
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.568);
+            font-family: $font-1;
+          }
+        }
+      }
+
+      button[type="submit"] {
+        height: 4rem;
+        background: $color-3;
+        border: none;
+        border-radius: 5px;
+        color: $color-1;
+        font-family: $font-1;
+        font-size: 2rem;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.692);
+          border: $color-3 2.5px solid;
+          color: $color-1;
+          font-weight: 700;
+        }
+      }
+
+      @media (max-width: 600px) {
+        p {
+          font-size: 1.8rem;
+        }
+
+        .text-fields {
+          grid-template-areas:
+            "name"
+            "subject"
+            "email"
+            "phone"
+            "message"
+            "button";
+        }
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    .container-section-3 {
+      grid-template-columns: 1fr;
+      padding-top: 2rem;
+
+      .container-icons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+        .contact-icon {
+          height: 70px;
+        }
+      }
+    }
+  }
+}

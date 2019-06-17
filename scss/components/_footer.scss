@@ -1,0 +1,48 @@
+footer {
+  background: $color-2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  @media (max-width: 600px) {
+    padding: 0.9rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: $color-3;
+    font-family: $font-1;
+    margin-right: 3rem;
+    @media (max-width: 600px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  img {
+    height: 30px;
+    margin-right: 1.5rem;
+    @media (max-width: 600px) {
+      height: 20px;
+      margin: 0.6rem 1rem;
+    }
+
+    &:hover {
+      background: $color-3;
+      border: none;
+      border-radius: 10px;
+    }
+  }
+
+  div {
+    color: $color-3;
+    font-family: $font-1;
+
+    a {
+      text-decoration: none;
+      color: $color-1;
+      @media (max-width: 600px) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

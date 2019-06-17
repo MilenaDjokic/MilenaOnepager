@@ -1,0 +1,53 @@
+header {
+  position: fixed;
+  top: 0;
+  background: rgba(50, 196, 210, 0.25);
+  color: $color-3;
+  width: 100%;
+  z-index: 1;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 94%;
+    margin: auto;
+
+    .logo {
+      height: 6rem;
+      padding: 0.5rem;
+
+      @media (max-width: 600px) {
+        height: 3.5rem;
+      }
+    }
+
+    nav {
+      a {
+        text-decoration: none;
+        color: $color-3;
+        font-size: 1.5rem;
+        transition: font-size 0.3s ease-out;
+        margin-right: 5rem;
+        @media (max-width: 600px) {
+          font-size: 1.2rem;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          font-weight: 800;
+          font-size: 2rem;
+          @media (max-width: 600px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        @media (max-width: 600px) {
+          margin-right: 5%;
+        }
+      }
+    }
+  }
+}
