@@ -12,7 +12,7 @@
     transform: translateY(10%);
     left: 10%;
 
-    @media (max-width: 1050px) {
+    @media (max-width: 800px) {
       left: 50%;
       transform: translate(-50%, 5%);
     }
@@ -26,10 +26,10 @@
     bottom: 50%;
     transform: translateY(50%);
     width: 50%;
-    left: 45%;
+    left: 50%;
     color: $color-3;
 
-    @media (max-width: 1050px) {
+    @media (max-width: 800px) {
       bottom: 35%;
       left: 50%;
       transform: translateX(-50%);
@@ -50,15 +50,15 @@
       @media (max-width: 600px) {
         font-size: 7.5rem;
       }
+      @media (max-width: 350px) {
+        font-size: 6rem;
+      }
     }
 
     .teaser-subtitle {
       font-size: 3rem;
       font-family: $font-2;
 
-      /* @media (max-width: 1500px) {
-        font-size: 3rem;
-      } */
       @media (max-width: 600px) {
         font-size: 2rem;
       }
@@ -72,7 +72,7 @@
     width: 100%;
     padding: 1rem 0;
     background-color: $color-2;
-    @media (max-width: 1050px) {
+    @media (max-width: 800px) {
       padding: 0.2rem 0;
     }
     @media (max-width: 600px) {
@@ -87,7 +87,7 @@
       margin: auto;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      @media (max-width: 1050px) {
+      @media (max-width: 800px) {
         grid-template-columns: 1fr;
       }
 
@@ -100,10 +100,10 @@
         &:last-child {
           border: none;
         }
-        @media (max-width: 1050px) {
+        @media (max-width: 800px) {
           border-right: none;
           border-bottom: 0.5px solid $color-3;
-          padding: 1.2rem 0;
+          padding: 0 1rem;
         }
         @media (max-width: 600px) {
           padding: 0.8rem 0;
@@ -112,7 +112,7 @@
         .icon-teaser {
           width: 7rem;
           left: 50%;
-          @media (max-width: 1050px) {
+          @media (max-width: 800px) {
             width: 6rem;
           }
           @media (max-width: 600px) {
@@ -128,9 +128,8 @@
           font-size: 2rem;
           font-family: $font-2;
           text-align: left;
-          padding: 2rem;
           margin-left: 2rem;
-          @media (max-width: 1050px) {
+          @media (max-width: 800px) {
             padding: 0.7rem;
           }
           @media (max-width: 600px) {

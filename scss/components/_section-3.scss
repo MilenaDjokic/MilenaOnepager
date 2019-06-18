@@ -9,6 +9,7 @@
 
   .container-section-3 {
     margin: auto;
+    padding-bottom: 5%;
     padding-top: 5rem;
     width: 100rem;
     max-width: 98%;
@@ -31,8 +32,14 @@
         .contact-icon {
           height: 30px;
         }
+
         .icon-text {
           font-size: 1rem;
+        }
+      }
+      @media (max-width: 350px) {
+        .contact-icon {
+          height: 5px;
         }
       }
     }
@@ -137,12 +144,22 @@
       padding-top: 2rem;
 
       .container-icons {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: space-evenly;
+        margin: auto;
         margin-bottom: 2rem;
+        // display: flex;
+        // justify-content: center;
+        // margin-bottom: 2rem;
 
+        .icon-text {
+          display: flex;
+          align-items: center;
+        }
         .contact-icon {
-          height: 70px;
+          height: 50px;
+          margin-right: 10%;
         }
       }
     }

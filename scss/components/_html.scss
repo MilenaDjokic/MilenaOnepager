@@ -6,4 +6,36 @@ html {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  #landscape {
+    display: none;
+  }
+
+  @media (max-height: 560px) {
+    header,
+    #teaser,
+    #timeline,
+    #section-1,
+    #section-2,
+    #section-3,
+    footer {
+      display: none;
+    }
+
+    #landscape {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      height: 100vh;
+      margin: auto;
+
+      img {
+        width: 20%;
+      }
+    }
+  }
 }
