@@ -54,14 +54,6 @@ header {
   z-index: 1;
 }
 
-header::before {
-  content: "";
-  width: 100vw;
-  height: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
 header .header-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -723,13 +715,14 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
 
 #section-1 .container-1-section-1 video {
   max-width: 100%;
+  z-index: -2;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   #section-1 .container-1-section-1 video {
     max-width: 170%;
     position: relative;
-    right: 30%;
+    right: 40%;
   }
 }
 
@@ -742,13 +735,12 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
 #section-1 .container-1-section-1 p {
   position: absolute;
   width: 500px;
-  top: 50%;
-  left: 20%;
+  top: 40%;
+  left: 15%;
   font-size: 5rem;
   font-family: "Bree Serif", serif;
   color: #fff;
   text-shadow: 2px 2px 4px #000000;
-  z-index: 1;
 }
 
 @media (max-width: 1050px) {
@@ -760,9 +752,9 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
 
 @media (max-width: 600px) {
   #section-1 .container-1-section-1 p {
-    font-size: 2rem;
-    top: 3%;
-    left: -15%;
+    font-size: 2.5rem;
+    top: 78%;
+    left: -18%;
     text-align: center;
   }
 }
