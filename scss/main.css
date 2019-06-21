@@ -762,7 +762,7 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
   #section-1 .container-1-section-1 p {
     font-size: 2rem;
     top: 3%;
-    left: -10%;
+    left: -15%;
     text-align: center;
   }
 }
@@ -889,7 +889,7 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
     height: 30px;
   }
   #section-3 .container-section-3 .container-icons .icon-text {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 
