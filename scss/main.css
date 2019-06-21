@@ -47,16 +47,26 @@ body #landscape {
 header {
   position: fixed;
   top: 0;
-  background: rgba(50, 196, 210, 0.25);
-  color: #fff;
+  background: none;
   width: 100%;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
   z-index: 1;
 }
 
-header div {
+header::before {
+  content: "";
+  width: 100vw;
+  height: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header .header-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -64,53 +74,145 @@ header div {
       -ms-flex-align: center;
           align-items: center;
   max-width: 94%;
-  margin: auto;
+  margin: 2% auto;
 }
 
-header div .logo {
+header .header-wrap .logo {
   height: 6rem;
-  padding: 0.5rem;
+  -webkit-transition: height 0.2s ease-in;
+  transition: height 0.2s ease-in;
 }
 
 @media (max-width: 600px) {
-  header div .logo {
+  header .header-wrap .logo {
+    height: 4rem;
+  }
+}
+
+header .header-wrap nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.5rem;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  margin-right: 5rem;
+}
+
+header .header-wrap nav a:last-child {
+  margin-right: 0;
+}
+
+header .header-wrap nav a:hover {
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+header .header-wrap #burger {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  header .header-wrap #burger {
+    display: inline-block;
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 0.5rem;
+  }
+  header .header-wrap #burger .burger-slice {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    border-radius: 2.5px;
+    background: #fff;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  header .header-wrap #burger .burger-slice:first-child {
+    top: 0;
+  }
+  header .header-wrap #burger .burger-slice:nth-child(2) {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  header .header-wrap #burger .burger-slice:last-child {
+    bottom: 0;
+  }
+}
+
+header .header-wrap #burger.burger-close-btn .burger-slice:first-child {
+  -webkit-transform: rotate(45deg) translate(9px, 9px);
+          transform: rotate(45deg) translate(9px, 9px);
+}
+
+header .header-wrap #burger.burger-close-btn .burger-slice:nth-child(2) {
+  width: 0%;
+}
+
+header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
+  -webkit-transform: rotate(-45deg) translate(9px, -9px);
+          transform: rotate(-45deg) translate(9px, -9px);
+}
+
+.header-min header {
+  background: #3acad7af;
+  -webkit-box-shadow: 0px 3px 15px 3px #26848da1;
+          box-shadow: 0px 3px 15px 3px #26848da1;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.header-min header .header-wrap {
+  margin: 0.5% auto;
+}
+
+.header-min header .logo {
+  height: 5rem;
+  -webkit-transition: height 0.2s ease-out;
+  transition: height 0.2s ease-out;
+}
+
+@media (max-width: 600px) {
+  .header-min header .logo {
     height: 3.5rem;
   }
 }
 
-header div nav a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.5rem;
-  -webkit-transition: font-size 0.3s ease-out;
-  transition: font-size 0.3s ease-out;
-  margin-right: 5rem;
-}
-
-@media (max-width: 600px) {
-  header div nav a {
-    font-size: 1.2rem;
-  }
-}
-
-header div nav a:last-child {
-  margin-right: 0;
-}
-
-header div nav a:hover {
-  font-weight: 800;
+.header-min header a {
   font-size: 2rem;
 }
 
-@media (max-width: 600px) {
-  header div nav a:hover {
-    font-size: 1.5rem;
+@media (max-width: 800px) {
+  header nav {
+    display: none;
   }
-}
-
-@media (max-width: 600px) {
-  header div nav a {
-    margin-right: 5%;
+  header.show-nav::before {
+    content: "";
+    background-color: #3acad7af;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 0;
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  header.show-nav .overlay {
+    position: absolute;
+    text-align: center;
+    display: block;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    margin-top: 10rem;
+  }
+  header.show-nav .overlay a {
+    display: block;
+    margin: auto;
+    font-size: 3rem;
   }
 }
 
@@ -385,7 +487,7 @@ header div nav a:hover {
 }
 
 #timeline ul li:nth-child(even) .timeline-box {
-  left: -390px;
+  left: -330px;
   -webkit-transform: translate(-200px, 0);
           transform: translate(-200px, 0);
 }
@@ -522,7 +624,7 @@ header div nav a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: auto;
+  margin: 5rem auto;
 }
 
 @media (max-width: 600px) {
@@ -537,16 +639,14 @@ header div nav a:hover {
 #section-1 .container-section-1 .box-2 {
   width: 1400px;
   max-width: 98%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: auto;
+  margin: 5rem auto;
 }
 
 @media (max-width: 600px) {
@@ -583,13 +683,12 @@ header div nav a:hover {
 
 #section-1 .container-section-1 img {
   width: 50%;
-  padding-bottom: 7rem;
 }
 
 @media (max-width: 600px) {
   #section-1 .container-section-1 img {
     width: 94%;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -597,7 +696,7 @@ header div nav a:hover {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-family: "Bree Serif", serif;
   color: #3ac9d7;
 }

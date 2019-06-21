@@ -49,7 +49,7 @@
       }
       // Box left
       &:nth-child(even) .timeline-box {
-        left: -390px;
+        left: -330px;
         transform: translate(-200px, 0);
         @media (max-width: 800px) {
           left: 40px;
