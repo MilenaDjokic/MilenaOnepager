@@ -15,7 +15,7 @@ body #landscape {
   display: none;
 }
 
-@media (max-height: 600px) {
+@media (max-height: 550px) {
   body header,
   body #teaser,
   body #timeline,
