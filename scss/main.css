@@ -209,6 +209,7 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
 }
 
 #teaser {
+  background-color: #3ac9d7;
   background: url(/img/BG.svg) no-repeat center center/cover;
   height: 100vh;
   width: 100%;
