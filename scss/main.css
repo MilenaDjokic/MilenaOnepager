@@ -2,6 +2,7 @@
 html {
   font-size: 10px;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -15,7 +16,7 @@ body #landscape {
   display: none;
 }
 
-@media (max-height: 500px) {
+@media (max-height: 450px) {
   body header,
   body #teaser,
   body #timeline,
@@ -96,7 +97,6 @@ header .header-wrap nav a:last-child {
 
 header .header-wrap nav a:hover {
   font-weight: 800;
-  font-size: 3rem;
 }
 
 header .header-wrap #burger {
@@ -182,7 +182,7 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
   }
   header.show-nav::before {
     content: "";
-    background-color: #3acad7af;
+    background-color: #3acad7f1;
     width: 100vw;
     height: 100vh;
     margin: 0 0;
@@ -191,17 +191,17 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
   }
-  header.show-nav .overlay {
+  header.show-nav nav {
     position: absolute;
     text-align: center;
     display: block;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 70%);
+            transform: translate(-50%, 70%);
     margin-top: 10rem;
   }
-  header.show-nav .overlay a {
+  header.show-nav nav a {
     display: block;
     margin: auto;
     font-size: 3rem;
@@ -371,6 +371,9 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
 @media (max-width: 600px) {
   #teaser .teaser-end .icons-container .icon-wrap {
     padding: 0.8rem 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -388,6 +391,7 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
 @media (max-width: 600px) {
   #teaser .teaser-end .icons-container .icon-wrap .icon-teaser {
     width: 4.5rem;
+    margin-left: 10%;
   }
 }
 
@@ -411,7 +415,7 @@ header .header-wrap #burger.burger-close-btn .burger-slice:last-child {
 @media (max-width: 600px) {
   #teaser .teaser-end .icons-container .icon-wrap .side-text {
     max-height: 6rem;
-    padding: 0;
+    margin-right: 5%;
     font-size: 1.4rem;
   }
 }
@@ -1085,7 +1089,7 @@ footer img {
 @media (max-width: 600px) {
   footer img {
     height: 20px;
-    margin: 0.6rem 1rem;
+    margin: 0.6rem 0.6rem;
   }
 }
 

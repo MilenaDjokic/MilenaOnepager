@@ -107,6 +107,7 @@
         }
         @media (max-width: 600px) {
           padding: 0.8rem 0;
+          justify-content: space-between;
         }
 
         .icon-teaser {
@@ -117,6 +118,7 @@
           }
           @media (max-width: 600px) {
             width: 4.5rem;
+            margin-left: 10%;
           }
         }
 
@@ -134,7 +136,7 @@
           }
           @media (max-width: 600px) {
             max-height: 6rem;
-            padding: 0;
+            margin-right: 5%;
             font-size: 1.4rem;
           }
         }
